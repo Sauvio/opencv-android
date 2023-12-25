@@ -1,7 +1,11 @@
 plugins {
 	id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
+
+group = 'org.opencv'
+version = rootProject.ext.opencv4AndroidVersion
 
 def openCVersionName = '4.8.1'
 def openCVersionCode = ((4 * 100 + 8) * 100 + 1) * 10 + 0
@@ -72,18 +76,6 @@ android {
             version gradle.cmakeVersion
         }
     }
-
-    flavorDimensions = ["parallelization"]
-    productFlavors {
-        standard {
-        }
-    }
-    publishing {
-        singleVariant("standardRelease") {
-            withSourcesJar()
-            withJavadocJar()
-        }
-    }
 }
 
 dependencies {
@@ -92,12 +84,12 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            standard(MavenPublication) {
-                from components.findByName('standardRelease')
-
-                groupId 'org.opencv'
-                artifactId 'opencv4android'
-                version rootProject.ext.opencv4AndroidVersion
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'org.opencv'
+                artifactId = 'opencv4android'
+                version = rootProject.ext.opencv4AndroidVersion
             }
         }
     }
