@@ -1,0 +1,4 @@
+include ':opencv'
+project(':opencv').projectDir = new File('./sdk')
+gradle.ext.cmakeVersion = '3.22.1'
+gradle.ext.ndkVersion = '25.1.8937393'
