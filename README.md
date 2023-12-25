@@ -1,6 +1,7 @@
 ## Open CV for Android
 
 > Auto building aar for OpenCV Android SDK
+
 JitPack - Downloads [![JitPack](https://jitpack.io/v/Sauvio/opencv-android.svg)](https://jitpack.io/#Sauvio/opencv-android)
 
 
@@ -21,13 +22,13 @@ Add the dependency in app/build.gradle
 ```groovy
 
 dependencies {
-    implementation 'com.github.iamareebjamal:opencv-android:<tag>'
+    implementation 'com.github.Sauvio:opencv-android:<tag>'
 }
 ```
 
 **Note:** 
-Replace `<tag>` with actual release. See latest releases [here](https://github.com/iamareebjamal/opencv-android/releases)
-`-contrib` releases include extra contrib modules not found in core releases
+Replace `<tag>` with actual release. See latest releases [here](https://github.com/Sauvio/opencv-android/releases)
+
 
 ### License
 [OpenCV License](https://github.com/opencv/opencv/blob/master/LICENSE)
